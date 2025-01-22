@@ -21,13 +21,13 @@
 
 ### Bước 2: Kiểm tra cài đặt
 
-Mở một cửa sổ terminal (Command Prompt trên Windows, Terminal trên macOS) và nhập lệnh:
+Mở một cửa sổ terminal (Command Prompt trên Windows, Terminal trên macOS) và nhập lệnh `git --version` hoặc `git -v`:
 
 ```bash
 git --version
 ```
 
-![git --version](images/git-version.png)
+![Kiểm tra version](images/kiem_tra_version_git.png)
 
 Nếu Git được cài đặt thành công, bạn sẽ thấy thông tin phiên bản Git hiện tại.
 
@@ -36,7 +36,7 @@ Nếu Git được cài đặt thành công, bạn sẽ thấy thông tin phiên
 - **Tạo tài khoản:** Truy cập [https://github.com/](https://www.google.com/url?sa=E&source=gmail&q=https://github.com/) và đăng ký một tài khoản.
 - **Tạo kho lưu trữ mới:** Nhấp vào nút "New" ở góc trên bên phải, điền thông tin cho kho lưu trữ của bạn (ví dụ: tên, mô tả) và nhấn "Create repository".
 
-![github.com_new](images/github.com_new.png)
+![Tạo kho lưu trữ remote](images/tao_kho_luu_tru_remote.png)
 
 ### Bước 4: Khởi tạo kho lưu trữ cục bộ (local repo)
 
@@ -47,7 +47,7 @@ Nếu Git được cài đặt thành công, bạn sẽ thấy thông tin phiên
 git init
 ```
 
-![git init](images/git-init.png)
+![Khởi tạo local repo](images/khoi_tao_local_repo.png)
 
 Lệnh này sẽ tạo một thư mục ẩn tên là `.git` trong thư mục dự án của bạn, đây là nơi Git lưu trữ thông tin về kho lưu trữ cục bộ.
 
@@ -75,7 +75,18 @@ git commit -m "Mô tả về thay đổi"
 
 Thay "Mô tả về thay đổi" bằng một thông điệp ngắn gọn mô tả những gì bạn đã thay đổi.
 
-### Bước 7: Kết nối kho lưu trữ cục bộ với kho lưu trữ từ xa
+### Bước 7: Đổi tên nhánh hiện tại thành main.
+
+- Để đổi tên nhánh `master` thành `main`:
+
+```bash
+git branch -M main
+```
+
+- Sau khi thực hiện lệnh này, bạn sẽ thấy rằng nhánh hiện tại của bạn đã được đổi tên thành `main`.
+- Nhánh `main` đang trở thành tiêu chuẩn mới cho nhánh mặc định trong nhiều dự án Git, thay thế cho nhánh `master` truyền thống.
+
+### Bước 8: Kết nối kho lưu trữ cục bộ với kho lưu trữ từ xa
 
 - **Sao chép URL:** Trên trang GitHub của kho lưu trữ, sao chép đường dẫn HTTPS.
 - **Kết nối:** Nhập lệnh:
@@ -86,7 +97,7 @@ git remote add origin <đường_dẫn_HTTPS>
 
 Thay `<đường_dẫn_HTTPS>` bằng đường dẫn bạn vừa sao chép.
 
-### Bước 8: Đẩy các thay đổi lên kho lưu trữ từ xa
+### Bước 9: Đẩy các thay đổi lên kho lưu trữ từ xa
 
 - **Đẩy:** Nhập lệnh:
 
@@ -95,6 +106,8 @@ git push -u origin main
 ```
 
 Lệnh này sẽ đẩy các thay đổi từ nhánh `main` (mặc định) của kho lưu trữ cục bộ lên nhánh `main` của kho lưu trữ từ xa.
+
+![Full các bước](images/toan_bo_quy_trinh_su_dung_git.png)
 
 ### Tham khảo thêm
 
@@ -130,13 +143,5 @@ Lệnh này sẽ đẩy các thay đổi từ nhánh `main` (mặc định) củ
 
 - **GitHub Desktop:** Nếu bạn không quen với dòng lệnh, bạn có thể sử dụng GitHub Desktop, một ứng dụng đồ họa giúp bạn làm việc với Git dễ dàng hơn.
 - **GitKraken:** Một ứng dụng Git client khác với giao diện đẹp và nhiều tính năng hữu ích.
-
-**Hình ảnh minh họa:**
-
-Bạn có thể thêm các hình ảnh minh họa cho từng bước để giúp người đọc dễ hiểu hơn. Ví dụ:
-
-- Hình ảnh giao diện GitHub khi tạo kho lưu trữ mới.
-- Hình ảnh cửa sổ terminal khi thực hiện các lệnh Git.
-- Hình ảnh cấu trúc thư mục của dự án sau khi khởi tạo Git.
 
 **Hy vọng hướng dẫn này sẽ giúp bạn bắt đầu làm quen với Git một cách dễ dàng\!**
